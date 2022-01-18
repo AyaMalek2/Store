@@ -15,10 +15,21 @@ export class ProductDetailsComponent implements OnInit {
   constructor(private productService :ProductService,private activatedroute:ActivatedRoute) { }
 
 
+  getProduct(id:number){
+    
+    this.productService.getProduct(id).subscribe((res: any) => {
+      this.product = res;
+  },
+  err => {
+    console.log(err);
+  }
+);
+  }
   ngOnInit(): void {
     this.activatedroute.params.subscribe((params: Params) => 
        {
          this.product.id=params.id;
+         this.getProduct(params.id);
   });
   }
 
