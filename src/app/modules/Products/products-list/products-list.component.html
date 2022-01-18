@@ -1,0 +1,12 @@
+<div  class="row col-12 cards">
+    <div *ngFor="let p of products" class="card" class="product-card col-4 flex-container">
+        <div class="card-header">
+          {{p.title}}
+        </div>
+        <b class="flex-item col-12">{{p.category}}</b>
+        <span class="flex-item col-12">{{p.price}}</span>
+        <button class="btn btn-primary btn-dark-azure col-12" (click)="getProductDetails(p.id)">
+          More Details
+          <i class="fa fa-eye"></i></button>
+      </div>
+    </div>
