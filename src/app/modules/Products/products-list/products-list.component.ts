@@ -24,6 +24,7 @@ export class ProductsListComponent implements OnInit {
   }
 
   getProductDetails(id:any){
+      this.router.navigate(['/Products/ProductDetails',id]);
   }
 
   ngOnInit(): void {
