@@ -1,0 +1,83 @@
+<fieldset class="text-center">
+<form [formGroup]="productForm" (ngSubmit)="addProduct()" class="col-8">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+                <label for="id">ID
+                    <b class="required">*</b>
+                </label>
+                <input type="number" id="product-id" name="product-id"
+                    formControlName="id"
+                    [(ngModel)]="product.id" 
+                    >&nbsp;
+              
+                <small *ngIf="productForm.controls.id.touched && productForm.controls.id.errors?.required" class="text-danger">
+                    required 
+                </small>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+                <label for="type">title
+                    <b class="required">*</b>
+                </label>
+                <input type="text" id="product-title" name="product-title"
+                    formControlName="title"
+                    [(ngModel)]="product.title" 
+                    >&nbsp;
+              
+                <small *ngIf="productForm.controls.title.touched && productForm.controls.title.errors?.required" class="text-danger">
+                    required 
+                </small>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+                <label for="category">category
+                    <b class="required">*</b>
+                </label>
+                <input type="text" id="product-category" name="product-category"
+                    formControlName="category"
+                    [(ngModel)]="product.category" 
+                    >&nbsp;
+              
+                <small *ngIf="productForm.controls.category.touched && productForm.controls.category.errors?.required" class="text-danger">
+                    required 
+                </small>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+                <label for="price">price
+                    <b class="required">*</b>
+                </label>
+                <input type="text" id="product-price" name="product-price"
+                    formControlName="price"
+                    [(ngModel)]="product.price" 
+                    >&nbsp;
+              
+                <small *ngIf="productForm.controls.price.touched && productForm.controls.price.errors?.required" class="text-danger">
+                    required 
+                </small>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-11">
+            <button type="submit" class="btn btn-primary pull-right" click="addProduct()" >
+                Add product</button>
+        </div>
+    </div>
+
+</form>
+</fieldset>
