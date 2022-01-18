@@ -15,12 +15,19 @@ export class ProductsListComponent implements OnInit {
 
   getProducts(){
     
+    this.productService.getProducts().subscribe((res: any) => {
+      this.products = res;
+  },
+  err => {
+    console.log(err);
+  });
   }
 
   getProductDetails(id:any){
   }
 
   ngOnInit(): void {
+    this.getProducts();
   }
 
 }
